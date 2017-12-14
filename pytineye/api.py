@@ -331,7 +331,8 @@ class TinEyeAPIRequest(object):
         image_file = ("image.jpg", data)
         obj = self._request('search', params=params, image_file=image_file, **kwargs)
 
-        return TinEyeResponse._from_dict(obj)
+        # return TinEyeResponse._from_dict(obj)
+        return obj # Return the json itself rather than converting into a TinEyeResponse object
 
     def remaining_searches(self, **kwargs):
         """
